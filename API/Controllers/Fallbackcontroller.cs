@@ -16,14 +16,14 @@ namespace Controllers
 
         public async System.Threading.Tasks.Task<ActionResult> IndexAsync()
         {
-            // string ip = Request.Host.ToString();
-            // await dataContext.SpyInfos.AddAsync(
-            //     new SpyInfo()
-            //     {
-            //         Ip = ip
-            //     }
-            // );
-            // await dataContext.SaveChangesAsync();
+            string ip = Request.Host.ToString();
+            await dataContext.SpyInfos.AddAsync(
+                new SpyInfo()
+                {
+                    Ip = ip
+                }
+            );
+            await dataContext.SaveChangesAsync();
             return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"), "text/HTML");
         }
     }

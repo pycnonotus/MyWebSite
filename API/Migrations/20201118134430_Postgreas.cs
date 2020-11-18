@@ -1,9 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace API.Migrations
 {
-    public partial class infoSpy : Migration
+    public partial class Postgreas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,9 +12,10 @@ namespace API.Migrations
                 name: "SpyInfos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    RequestDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Ip = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    RequestDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    Ip = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
