@@ -16,7 +16,7 @@ namespace Controllers
 
         public async System.Threading.Tasks.Task<ActionResult> IndexAsync()
         {
-            string ip = Request.Host.ToString();
+            string ip = this.Request.HttpContext.Connection.RemoteIpAddress + "@" + this.Request.HttpContext.Connection.LocalIpAddress;
             await dataContext.SpyInfos.AddAsync(
                 new SpyInfo()
                 {
