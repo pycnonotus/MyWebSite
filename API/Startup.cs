@@ -16,13 +16,19 @@ using Data;
 using Microsoft.AspNetCore.HttpOverrides;
 using API.Interfaces;
 using API.Data;
+using API.Extensions;
+using API.Service;
+using AutoMapper;
+using API.Helpers;
 
 namespace API
 {
     public class Startup
     {
+        private readonly IConfiguration configuration;
         public Startup(IConfiguration configuration)
         {
+            this.configuration = configuration;
             Configuration = configuration;
         }
 
@@ -32,15 +38,18 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddIdentityServices(this.configuration);
             services.AddControllers();
             services.AddCors();
         }
 
-        
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -50,8 +59,8 @@ namespace API
                 app.UseDeveloperExceptionPage();
             }
 
-            // app.UseHttpsRedirection();
-            
+            app.UseHttpsRedirection();
+
             app.UseRouting();
             app.UseCors(
                          x => x.AllowAnyHeader().AllowAnyMethod()
@@ -64,8 +73,10 @@ namespace API
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
-                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto    
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
+
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseDefaultFiles();
             app.UseStaticFiles();

@@ -128,7 +128,9 @@ $tf/
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
-
+API/wwwroot/assets/
+API/wwwroot/*
+API/wwwroot/
 # TeamCity is a build add-in
 _TeamCity*
 

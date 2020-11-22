@@ -24,7 +24,15 @@ namespace Controllers
                 }
             );
             await dataContext.SaveChangesAsync();
-            return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"), "text/HTML");
+            if (User.Identity.IsAuthenticated)
+            {
+
+                return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"), "text/HTML");
+            }
+            else
+            {
+                return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwrootUnAuth", "index.html"), "text/HTML");
+            }
         }
     }
 }
