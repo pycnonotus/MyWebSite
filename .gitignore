@@ -47,6 +47,8 @@ Generated\ Files/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+*/node_modules
+**/node_modules
 
 # Build Results of an ATL Project
 [Dd]ebugPS/

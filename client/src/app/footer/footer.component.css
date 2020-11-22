@@ -1,0 +1,10 @@
+.root{
+  background-color: var(--primary);
+  color: white;
+  padding: 1em;
+  text-align: start;
+}
+.foot{
+  text-align: center;
+}
+
