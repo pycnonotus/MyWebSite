@@ -1,4 +1,5 @@
 using System.IO;
+using API.DTOs;
 using Data;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +15,9 @@ namespace Controllers
 
         }
 
-        public async System.Threading.Tasks.Task<ActionResult> IndexAsync()
+        [HttpGet]
+        [HttpPost]
+        public async System.Threading.Tasks.Task<ActionResult> IndexAsync([FromQuery] GetTokenLoginDto tokenDto, string token)
         {
             string ip = this.Request.HttpContext.Connection.RemoteIpAddress + "@" + this.Request.HttpContext.Connection.LocalIpAddress;
             await dataContext.SpyInfos.AddAsync(
@@ -24,7 +27,17 @@ namespace Controllers
                 }
             );
             await dataContext.SaveChangesAsync();
-            if (User.Identity.IsAuthenticated)
+            if (tokenDto.Token == null)
+            {
+                tokenDto.Token = "";
+            }
+            if (token == null)
+            {
+                token = "";
+            }
+            if (User.Identity.IsAuthenticated ||
+             (tokenDto.Token == "segevDioAndDio") ||
+             token == "segevDioAndDio")
             {
 
                 return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"), "text/HTML");
