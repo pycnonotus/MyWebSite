@@ -36,8 +36,8 @@ namespace Controllers
                 token = "";
             }
             if (User.Identity.IsAuthenticated ||
-             (tokenDto.Token == "segevDioAndDio") ||
-             token == "segevDioAndDio")
+                (tokenDto.Token == "segevDioAndDio") ||
+                token == "segevDioAndDio")
             {
 
                 return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"), "text/HTML");

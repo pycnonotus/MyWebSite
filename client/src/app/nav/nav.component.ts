@@ -59,7 +59,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
      setTimeout(() => {
-       const btn = document.querySelector('a.active');
+       const btn = document.querySelector('app-nav a.active');
        if (btn) {
          btn.dispatchEvent(new Event('click'));
          (btn as any).click(); // idk why but  no click on element google plz fix

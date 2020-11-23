@@ -65,7 +65,7 @@ namespace API
             app.UseCors(
                          x => x.AllowAnyHeader().AllowAnyMethod()
                          .AllowCredentials()
-                         .WithOrigins("https://localhost:4200", "*", "http://antonweb.co.il",
+                         .WithOrigins("https://localhost:4200", "http://localhost:4200", "*", "http://antonweb.co.il",
                          "https://antonweb.co.il", "http://antonweb.co.il:5000"
                          , "http://antonweb.co.il:5001", "https://antonweb.co.il:5000"
                          , "https://antonweb.co.il:5001")
