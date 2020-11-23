@@ -26,6 +26,10 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
+            if (System.String.IsNullOrEmpty(registerDto.Username))
+            {
+                return BadRequest("Username is required");
+            }
             if (await UserExists(registerDto.Username.ToUpper()))
             {
                 return BadRequest("Username already exists");

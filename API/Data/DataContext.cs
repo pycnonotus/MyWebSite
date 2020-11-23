@@ -21,7 +21,7 @@ namespace Data
 
         }
         public DbSet<SpyInfo> SpyInfos { get; set; }
-
+        public DbSet<Projects> Projects { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -35,6 +35,11 @@ namespace Data
             HasMany(
                 ur => ur.UserRoles
             ).WithOne(u => u.Role).HasForeignKey(u => u.RoleId).IsRequired();
+
+
+            modelBuilder.Entity<Projects>().HasMany(u => u.Tags).WithOne(u => u.Project).HasForeignKey(u => u.ProjectId).IsRequired();
+            modelBuilder.Entity<Tags>()
+       .HasKey(c => new { c.Tag, c.ProjectId });
 
         }
 

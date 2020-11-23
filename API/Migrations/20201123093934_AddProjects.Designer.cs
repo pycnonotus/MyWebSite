@@ -3,15 +3,17 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20201123093934_AddProjects")]
+    partial class AddProjects
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -152,24 +154,12 @@ namespace API.Migrations
                     b.Property<string>("ProjectDetails")
                         .HasColumnType("text");
 
+                    b.Property<string[]>("Tags")
+                        .HasColumnType("text[]");
+
                     b.HasKey("Id");
 
                     b.ToTable("Projects");
-                });
-
-            modelBuilder.Entity("API.Entities.Tags", b =>
-                {
-                    b.Property<string>("Tag")
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("ProjectId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Tag", "ProjectId");
-
-                    b.HasIndex("ProjectId");
-
-                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("Entities.SpyInfo", b =>
@@ -295,17 +285,6 @@ namespace API.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("API.Entities.Tags", b =>
-                {
-                    b.HasOne("API.Entities.Projects", "Project")
-                        .WithMany("Tags")
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Project");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("API.Entities.AppRoles", null)
@@ -350,11 +329,6 @@ namespace API.Migrations
             modelBuilder.Entity("API.Entities.AppUsers", b =>
                 {
                     b.Navigation("UserRoles");
-                });
-
-            modelBuilder.Entity("API.Entities.Projects", b =>
-                {
-                    b.Navigation("Tags");
                 });
 #pragma warning restore 612, 618
         }

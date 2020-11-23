@@ -14,6 +14,8 @@ namespace API.Data
 
         public ISpyInfoRepository SpyInfoRepository => new SpyInfoRepository(this.dataContext);
 
+        public IProjectRepository ProjectRepository => new ProjectRepository(this.dataContext);
+
         public async Task<bool> SaveAll()
         {
             return (await this.dataContext.SaveChangesAsync() > 0);
