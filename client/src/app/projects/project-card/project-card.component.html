@@ -1,0 +1,16 @@
+<div class="card mb-2">
+    <div class="card-body">
+        <div class="info">
+            שם
+            {{ project?.name }}
+
+        </div>
+        <div class="image"></div>
+    </div>
+    <div class="card-footer text-muted">
+        תגים:
+        <span *ngFor="let tag of project?.tags">
+            {{ tag }}
+        </span>
+    </div>
+</div>

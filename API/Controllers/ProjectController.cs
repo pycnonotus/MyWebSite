@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
@@ -16,6 +18,12 @@ namespace API.Controllers
         {
             this.mapper = mapper;
             this.unitOfWork = unitOfWork;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProjectDto>>> GetProjects()
+        {
+            return Ok(await this.unitOfWork.ProjectRepository.GetProjects());
         }
 
         [HttpPost]

@@ -15,7 +15,9 @@ namespace API.Helpers
             .ForMember(x => x.Tag,
                 o => o.MapFrom(s => s)
             );
-
+            CreateMap<Projects, ProjectDto>();
+            CreateMap<Tags, string>().ConvertUsing(r => r.Tag);
+            
         }
     }
 }

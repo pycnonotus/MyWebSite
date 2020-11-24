@@ -16,6 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { AdminProjectsMangerComponent } from './admin/admin-projects-manger/admin-projects-manger.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ProjecktComponent } from './modals/projeckt/projeckt.component';
+import { ModalProjecktComponent } from './modals/modal-projeckt/modal-projeckt.component';
+import { AdminProjectsMangerCrateComponent } from './admin/admin-projects-manger/admin-projects-manger-crate/admin-projects-manger-crate.component';
+import { ProjectCardComponent } from './projects/project-card/project-card.component';
+import { HomeBannerComponent } from './home/home-banner/home-banner.component';
+
 
 @NgModule({
     declarations: [
@@ -30,6 +37,11 @@ import { AdminProjectsMangerComponent } from './admin/admin-projects-manger/admi
         AdminComponent,
         AdminNavComponent,
         AdminProjectsMangerComponent,
+        ProjecktComponent,
+        ModalProjecktComponent,
+        AdminProjectsMangerCrateComponent,
+        ProjectCardComponent,
+        HomeBannerComponent,
     ],
     imports: [
         BrowserModule,
@@ -37,6 +49,7 @@ import { AdminProjectsMangerComponent } from './admin/admin-projects-manger/admi
         BrowserAnimationsModule,
         FormsModule,
         HttpClientModule,
+        ModalModule.forRoot(),
     ],
     providers: [],
     bootstrap: [AppComponent],

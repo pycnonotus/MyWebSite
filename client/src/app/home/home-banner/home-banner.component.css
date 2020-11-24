@@ -1,0 +1,90 @@
+:host {
+    box-sizing: border-box;
+}
+.animat {
+    height: 45px;
+    overflow: hidden;
+}
+.pretext {
+}
+.animat > div > div {
+    display: inline-block;
+    padding: 0 5px;
+    height: 50px;
+    color: white;
+    font-family: "Permanent Marker", cursive;
+    letter-spacing: 5px;
+}
+.animat div:first-child {
+    animation: show 10s linear infinite both;
+}
+.animat div {
+    height: 50px;
+}
+.animat div div {
+    background-color: #42c58a;
+    margin: 0;
+}
+.animat div:nth-child(2) div {
+    background-color: var(--red);
+}
+.animat div:nth-child(3) div {
+    background-color: var(--yellow);
+}
+.animat div:first-child div {
+    background-color: #4ec7f3;
+}
+.animat div:nth-child(5) div {
+    background-color: var(--indigo);
+}
+.animat div:nth-child(6) div {
+    background-color: #4ec7f3;
+}
+@keyframes show {
+    0% {
+        margin-top: 0px;
+    }
+    18.9% {
+        margin-top: 0px;
+    }
+
+    20% {
+        margin-top: -50px;
+    }
+    38.9% {
+        margin-top: -50px;
+    }
+    40% {
+        margin-top: -100px;
+    }
+    58.9% {
+        margin-top: -100px;
+    }
+    60% {
+        margin-top: -150px;
+    }
+    78.9% {
+        margin-top: -150px;
+    }
+    80% {
+        margin-top: -200px;
+    }
+
+    98.9% {
+        margin-top: -200px;
+    }
+
+    100%{
+        margin-top: -250px;
+    }
+
+
+}
+#wrap {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: bold;
+    width: 100%;
+    display: block;
+}

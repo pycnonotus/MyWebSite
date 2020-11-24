@@ -6,3 +6,6 @@ html body{
 ul.no-dot{
   list-style: none;
 }
+form div.form-group{
+    text-align: right;
+}
