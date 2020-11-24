@@ -6,6 +6,8 @@
     overflow: hidden;
 }
 .pretext {
+        color: white;
+
 }
 .animat > div > div {
     display: inline-block;
@@ -16,7 +18,7 @@
     letter-spacing: 5px;
 }
 .animat div:first-child {
-    animation: show 10s linear infinite both;
+    animation: show 10s linear infinite;
 }
 .animat div {
     height: 50px;
@@ -34,11 +36,8 @@
 .animat div:first-child div {
     background-color: #4ec7f3;
 }
-.animat div:nth-child(5) div {
+.animat div:last-child div {
     background-color: var(--indigo);
-}
-.animat div:nth-child(6) div {
-    background-color: #4ec7f3;
 }
 @keyframes show {
     0% {
@@ -73,12 +72,9 @@
     98.9% {
         margin-top: -200px;
     }
-
-    100%{
-        margin-top: -250px;
+    100% {
+        margin-top: 50px;
     }
-
-
 }
 #wrap {
     color: rgb(0, 0, 0);
