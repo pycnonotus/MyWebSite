@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 :host {
     box-sizing: border-box;
 }
@@ -7,15 +8,16 @@
 }
 .pretext {
         color: white;
-
+        font-size: 0.8em;
 }
 .animat > div > div {
     display: inline-block;
-    padding: 0 5px;
+    padding: 0 8px;
     height: 50px;
     color: white;
-    font-family: "Permanent Marker", cursive;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
 }
 .animat div:first-child {
     animation: show 10s linear infinite;
