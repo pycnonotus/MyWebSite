@@ -37,7 +37,9 @@ namespace Controllers
             }
             if (User.Identity.IsAuthenticated ||
                 (tokenDto.Token == "segevDioAndDio") ||
-                token == "segevDioAndDio")
+                (token == "segevDioAndDio") ||
+                (tokenDto.Token == "secretWord2020") ||
+                token == "secretWord2020")
             {
 
                 return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"), "text/HTML");

@@ -1,0 +1,36 @@
+.badge{
+    margin: 0 0.5em;
+    cursor: pointer;
+}
+.card-footer{
+    padding: 5px;
+}
+.flex{
+    display: flex;
+}
+.img{
+    overflow: hidden;
+    padding: 0 !important;
+
+
+}
+.img > img{
+    width: 100%;
+    height: 100%;
+}
+.card-body{
+    padding: 0;
+}
+.text{
+padding: 1.5em 1.5em;
+margin: 0 auto;
+}
+
+.row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.btn{
+    margin: 1em;
+    width: 100px;
+}

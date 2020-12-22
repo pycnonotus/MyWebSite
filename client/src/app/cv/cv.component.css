@@ -1,0 +1,16 @@
+@media only screen and (max-width:850px){
+    .hidden-sm{
+        display: none;
+        overflow-x: hidden;
+    }
+}
+.hidden-sm, .container{
+            padding: 0 0;
+}
+.container.text-left{
+    padding: 3.6em;
+    padding-bottom: 0;
+}
+h4 a{
+    margin-left: 0.5em;
+}

@@ -22,6 +22,7 @@ import { ModalProjecktComponent } from './modals/modal-projeckt/modal-projeckt.c
 import { AdminProjectsMangerCrateComponent } from './admin/admin-projects-manger/admin-projects-manger-crate/admin-projects-manger-crate.component';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
 import { HomeBannerComponent } from './home/home-banner/home-banner.component';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { HomeBannerComponent } from './home/home-banner/home-banner.component';
         FormsModule,
         HttpClientModule,
         ModalModule.forRoot(),
+        TypeaheadModule.forRoot(),
     ],
     providers: [],
     bootstrap: [AppComponent],

@@ -2,10 +2,19 @@ form {
   width: 100%;
 }
 .search-form input {
-  border-top-right-radius: 2em;
-  border-bottom-right-radius: 2em;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
 }
 .search-form button {
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.text-center.btn-group{
+    margin:1em auto;
+}
+.text-center.btn-group > button:first-child{
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
   padding-right: 2em;

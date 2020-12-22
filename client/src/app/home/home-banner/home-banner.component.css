@@ -35,11 +35,14 @@
 .animat div:nth-child(3) div {
     background-color: var(--yellow);
 }
+.animat div:nth-child(4) div {
+    background-color: var(--indigo);
+}
 .animat div:first-child div {
     background-color: #4ec7f3;
 }
 .animat div:last-child div {
-    background-color: var(--indigo);
+    background-color:  #4ec7f3;
 }
 @keyframes show {
     0% {
@@ -75,7 +78,7 @@
         margin-top: -200px;
     }
     100% {
-        margin-top: 50px;
+        margin-top: -250px;
     }
 }
 #wrap {

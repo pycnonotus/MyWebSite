@@ -1,15 +1,36 @@
 <div class="card mb-2">
     <div class="card-body">
         <div class="info">
-            שם
-            {{ project?.name }}
+            <div class="row">
+                <div class="text col-6 text-left">
+                    <h3>
+                        {{ project.name }}
+                    </h3>
+                    <hr />
+                    <p>
+                        {{ project.projectDetails}}
+                    </p>
+                    <br>
+                    <hr>
+                    <div class="text-center">
 
+                        <button class="btn btn-primary">
+                            github
+                        </button>
+                        <button class="btn btn-primary">
+                            demo
+                        </button>
+                    </div>
+                </div>
+                <div class="img col-6 img">
+                    <img src="/assets/mobile-phone-1917737_1920.jpg" alt=" {{ project.name }} screen">
+                </div>
+            </div>
         </div>
-        <div class="image"></div>
+
     </div>
-    <div class="card-footer text-muted">
-        תגים:
-        <span *ngFor="let tag of project?.tags">
+    <div class="card-footer text-muted text-left">
+        <span class="badge badge-warning" *ngFor="let tag of project?.tags">
             {{ tag }}
         </span>
     </div>

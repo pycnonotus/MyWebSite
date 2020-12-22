@@ -1,7 +1,7 @@
 export interface Project {
     id: string;
     name: string;
-    projectDescription: string;
+    projectDetails: string;
     tags: string[];
     minProject: boolean;
     gitUrl: string;

@@ -29,3 +29,16 @@
     z-index: 100000;
     border-radius: 1em;
 }
+@media only screen and (max-width:1000px){
+    .nav-animate, .bar{
+        display: none !important;
+        overflow-x: hidden !important;
+        z-index: -99999;
+        position: fixed;
+        bottom: -99999999px;
+        height: 0px;
+        color: transparent;
+        background-color: transparent;
+        opacity: 0.8;
+    }
+}

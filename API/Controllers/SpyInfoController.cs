@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Data;
 using API.DTOs;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +26,14 @@ namespace API.Controllers
                 Host = x.Ip
             });
             return Ok(result);
-
         }
+
+        [HttpGet("cv")]
+        public async Task<ActionResult> GetCvSpy()
+        {
+            var info = await OutsideSpyRepository.GetCvSpy();
+            return Ok(info);
+        }
+
     }
 }

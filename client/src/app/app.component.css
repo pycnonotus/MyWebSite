@@ -1,3 +1,9 @@
 :host{
   text-align: center;
 }
+header{
+    display: block;
+    position:sticky;
+    top: 0;
+    z-index:31238192038190823091;
+}
