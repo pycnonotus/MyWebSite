@@ -44,7 +44,6 @@ export class NavComponent implements OnInit {
     }
   }
   moveBarTo(element) {
-    console.log('a');
 
     const el = element.srcElement;
     const x = this.getPositionFormElement(el).x;
@@ -53,8 +52,7 @@ export class NavComponent implements OnInit {
     this.barSavedWidth = 0;
     this.barSavedX = 0;
     console.dir(el);
-    console.log(this.barLeftX);
-    console.log(this.barWidth);
+
   }
 
   ngOnInit(): void {

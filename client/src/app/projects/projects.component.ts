@@ -16,7 +16,6 @@ export class ProjectsComponent implements OnInit {
     filter: string = '';
     tagsCopy: string[] = [];
     async ngOnInit(): Promise<void> {
-        console.log('s1');
 
         const tagSet = new Set<string>();
         this.projectService.getProjects();
@@ -28,26 +27,22 @@ export class ProjectsComponent implements OnInit {
                 this.projects = [...projects];
                 this.projectsCopy = [...projects];
                 projects.forEach((project) => {
-                    console.log('s');
 
                     project.tags.forEach((t) => {
                         tagSet.add(t);
                     });
                 });
-                console.log(tagSet.values());
-                console.log([...tagSet.values()]);
+
                 this.tags = [...tagSet];
                 this.tagsCopy = [...this.tags];
             });
     }
     onAnyChangeOfFilter(obj) {
-        console.log(obj);
         this.tags = this.tagsCopy.filter((ta) => !this.filter.includes(ta));
     }
     onSubmit() {
         if (this.filter.length === 0) {
             this.projects = [...this.projectsCopy];
-            console.log('im here empty');
             return;
         }
         const tt = true;
