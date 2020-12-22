@@ -35,9 +35,6 @@ export class AccountService {
 
     setCurrentUser(user: User) {
         if (!user) {
-            console.log('====================================');
-            console.log('user is null');
-            console.log('====================================');
             throw new Error('can not set user as null');
         }
         localStorage.setItem('user', JSON.stringify(user));

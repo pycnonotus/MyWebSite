@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminCvSpyComponent } from './admin/admin-cv-spy/admin-cv-spy.component';
 import { AdminProjectsMangerComponent } from './admin/admin-projects-manger/admin-projects-manger.component';
 import { AdminComponent } from './admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
         component: AdminComponent,
         children: [
             { path: 'projects', component: AdminProjectsMangerComponent },
+            { path: 'cv', component: AdminCvSpyComponent },
         ],
     },
     { path: 'projects', component: ProjectsComponent },

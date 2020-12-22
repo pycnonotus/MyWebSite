@@ -53,9 +53,7 @@ export class ProjectsComponent implements OnInit {
         const tt = true;
         this.projects = this.projectsCopy.filter((p) => {
             let found = true;
-            console.log('====================================');
-            console.log(p);
-            console.log(this.filter);
+
             this.filter.split(',').forEach((tag) => {
                 if (!p.tags.includes(tag)) {
                     found = false;

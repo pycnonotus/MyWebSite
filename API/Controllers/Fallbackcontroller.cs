@@ -35,19 +35,8 @@ namespace Controllers
             {
                 token = "";
             }
-            if (User.Identity.IsAuthenticated ||
-                (tokenDto.Token == "segevDioAndDio") ||
-                (token == "segevDioAndDio") ||
-                (tokenDto.Token == "secretWord2020") ||
-                token == "secretWord2020")
-            {
+            return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"), "text/HTML");
 
-                return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"), "text/HTML");
-            }
-            else
-            {
-                return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwrootUnAuth", "index.html"), "text/HTML");
-            }
         }
     }
 }

@@ -23,7 +23,8 @@ import { AdminProjectsMangerCrateComponent } from './admin/admin-projects-manger
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
 import { HomeBannerComponent } from './home/home-banner/home-banner.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
-
+import { AdminCvSpyComponent } from './admin/admin-cv-spy/admin-cv-spy.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
     declarations: [
@@ -43,6 +44,7 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
         AdminProjectsMangerCrateComponent,
         ProjectCardComponent,
         HomeBannerComponent,
+        AdminCvSpyComponent,
     ],
     imports: [
         BrowserModule,
@@ -52,6 +54,7 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
         HttpClientModule,
         ModalModule.forRoot(),
         TypeaheadModule.forRoot(),
+        ToastrModule.forRoot(),
     ],
     providers: [],
     bootstrap: [AppComponent],

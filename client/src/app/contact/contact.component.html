@@ -1,8 +1,8 @@
-<form action="">
+<form #contactForm="ngForm" (submit)="contactForm.valid && onFormSubmit()" >
     <div class="container">
         <div class="row mb-4">
             <div class="col">
-                <h1>Contact </h1>
+                <h1>Contact</h1>
             </div>
         </div>
         <div class="row">
@@ -11,38 +11,59 @@
                 <input
                     type="text"
                     class="form-control"
-                    placeholder="ישראל ישראלי"
+                    [(ngModel)]="model.name"
+                    name="name"
+                    #name="ngModel"
                 />
+                <div
+                    [hidden]="name.valid || name.pristine"
+                    class="alert alert-danger"
+                ></div>
+                <div class="col-sm-12 col-md-6 form-group">
+                    <label for="exampleInputEmail1">Phone number</label>
+                    <input
+                        type="phone"
+                        class="form-control"
+                        placeholder="0500000000"
+                        [(ngModel)]="model.phoneNumber"
+                        name="phoneNumber"
+                    />
+                </div>
             </div>
-            <div class="col-sm-12 col-md-6 form-group">
-                <label for="exampleInputEmail1">Phone number</label>
-                <input
-                    type="phone"
-                    class="form-control"
-                    placeholder="0500000000"
-                />
+            <div class="row">
+                <div class="col-sm-12 col-md-12 form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input
+                        type="phone"
+                        class="form-control"
+                        placeholder="example@example.com"
+                        [(ngModel)]="model.email"
+                        name="email"
+                        email
+                    />
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12 form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input
-                    type="phone"
-                    class="form-control"
-                    placeholder="0500000000"
-                />
+            <div class="row">
+                <div class="col-sm-12 col-md-12 form-group">
+                    <label for="exampleInputEmail1">Message</label>
+                    <textarea
+                        class="form-control"
+                        [(ngModel)]="model.message"
+                        name="message"
+                    >
+                    </textarea>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12 form-group">
-                <label for="exampleInputEmail1">Message</label>
-                <textarea class="form-control"> </textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12 form-group text-right">
-                  <button type="submit" class="btn btn-primary">Send</button>
-
+            <div class="row">
+                <div class="col-sm-12 col-md-12 form-group text-right">
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        [disabled]="!contactForm.form.valid || loading"
+                    >
+                        Send
+                    </button>
+                </div>
             </div>
         </div>
     </div>

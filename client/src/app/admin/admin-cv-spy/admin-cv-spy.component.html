@@ -1,0 +1,29 @@
+<h1>CV SPY</h1>
+<br>
+<h2>
+    Web site redirect
+     <button type="button" class="btn btn-primary" (click)="showWebsiteRedirect = !showWebsiteRedirect">
+        Show website redirect
+    </button>
+
+</h2>
+<div class="container" [hidden]="!showWebsiteRedirect" >
+    <table class="table" id="collapseBasic" >
+        <tr>
+            <th>ip</th>
+            <th>date</th>
+            <th>info</th>
+        </tr>
+        <tr *ngFor="let ifo of getRedirectToWebSite()">
+            <td>
+                {{ ifo.ip }}
+            </td>
+            <td>
+                {{ ifo.date }}
+            </td>
+            <td class="">
+                {{ ifo.info }}
+            </td>
+        </tr>
+    </table>
+</div>
