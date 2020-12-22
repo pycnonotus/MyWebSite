@@ -51,7 +51,6 @@ export class NavComponent implements OnInit {
     this.barWidth = el.offsetWidth + 0;
     this.barSavedWidth = 0;
     this.barSavedX = 0;
-    console.dir(el);
 
   }
 
