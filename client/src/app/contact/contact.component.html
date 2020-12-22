@@ -14,11 +14,14 @@
                     [(ngModel)]="model.name"
                     name="name"
                     #name="ngModel"
+                    placeholder="Bob McBob"
                 />
                 <div
                     [hidden]="name.valid || name.pristine"
                     class="alert alert-danger"
                 ></div>
+            </div>
+
                 <div class="col-sm-12 col-md-6 form-group">
                     <label for="exampleInputEmail1">Phone number</label>
                     <input
@@ -29,7 +32,8 @@
                         name="phoneNumber"
                     />
                 </div>
-            </div>
+        </div>
+
             <div class="row">
                 <div class="col-sm-12 col-md-12 form-group">
                     <label for="exampleInputEmail1">Email</label>
@@ -50,6 +54,7 @@
                         class="form-control"
                         [(ngModel)]="model.message"
                         name="message"
+                        placeholder="bla bla bla bla"
                     >
                     </textarea>
                 </div>
@@ -65,6 +70,5 @@
                     </button>
                 </div>
             </div>
-        </div>
     </div>
 </form>
