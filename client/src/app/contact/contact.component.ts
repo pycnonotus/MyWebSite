@@ -13,10 +13,10 @@ import { Contact } from '../models/contact';
 export class ContactComponent implements OnInit {
     baseUrl = environment.apiUrl;
     model: Contact = {
-        email: "",
-        message: "",
-        name: "",
-        phoneNumber:""
+        email: '',
+        message: '',
+        name: '',
+        phoneNumber: '',
     };
     // contactForm = new FormGroup({
     //     name = new FormGroup(''),
@@ -32,8 +32,14 @@ export class ContactComponent implements OnInit {
     onFormSubmit() {
         const url = this.baseUrl + 'shared/contact';
         this.loading = true;
-        this.http.post(url, module).subscribe((res) => {
-                this.toastr.success('Message has been sent');
+        this.http.post(url, this.model).subscribe((res) => {
+            this.toastr.info('The message has been successfully sent');
+            this.model = {
+                email: '',
+                message: '',
+                name: '',
+                phoneNumber: '',
+            };
             this.loading = false;
         });
     }

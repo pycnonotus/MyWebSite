@@ -25,6 +25,8 @@ import { HomeBannerComponent } from './home/home-banner/home-banner.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { AdminCvSpyComponent } from './admin/admin-cv-spy/admin-cv-spy.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PgpComponent } from './shared/pgp/pgp.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
     declarations: [
@@ -45,6 +47,8 @@ import { ToastrModule } from 'ngx-toastr';
         ProjectCardComponent,
         HomeBannerComponent,
         AdminCvSpyComponent,
+        PgpComponent,
+        ContactPageComponent,
     ],
     imports: [
         BrowserModule,
@@ -54,7 +58,7 @@ import { ToastrModule } from 'ngx-toastr';
         HttpClientModule,
         ModalModule.forRoot(),
         TypeaheadModule.forRoot(),
-        ToastrModule.forRoot(),
+        ToastrModule.forRoot({ positionClass: 'toast-bottom-center' }),
     ],
     providers: [],
     bootstrap: [AppComponent],
