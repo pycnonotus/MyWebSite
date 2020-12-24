@@ -1,0 +1,23 @@
+<h1>redirect spy</h1>
+<br>
+
+<div class="container"  >
+    <table class="table" id="collapseBasic" >
+        <tr>
+            <th>ip</th>
+            <th>date</th>
+            <th>info</th>
+        </tr>
+        <tr *ngFor="let ifo of data">
+            <td>
+                {{ ifo.ip }}
+            </td>
+            <td>
+                {{ ifo.date }}
+            </td>
+            <td class="">
+                {{ ifo.info }}
+            </td>
+        </tr>
+    </table>
+</div>

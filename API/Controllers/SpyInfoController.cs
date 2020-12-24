@@ -4,10 +4,12 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    [Authorize]
     public class SpyInfoController : BaseController
     {
         private readonly IUnitOfWork unitOfWork;

@@ -14,7 +14,8 @@ namespace API.Data
         public async static Task<IEnumerable<CvDto>> GetCvSpy()
         {
             List<CvDto> retData = new List<CvDto>();
-            var connString = "Host=antonweb.co.il;Username=appuser;Password=newPass342;Database=urlshortner";
+            
+            var connString = "Host=localhost;Username=appuser;Password=newPass342;Database=urlshortner";
             await using var conn = new NpgsqlConnection(connString);
             await conn.OpenAsync();
             String sql = "SELECT ip, date, alias, id, info FROM public.\"VISITORS\";";

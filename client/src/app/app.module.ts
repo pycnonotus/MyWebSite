@@ -12,7 +12,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { AdminProjectsMangerComponent } from './admin/admin-projects-manger/admin-projects-manger.component';
@@ -27,6 +27,8 @@ import { AdminCvSpyComponent } from './admin/admin-cv-spy/admin-cv-spy.component
 import { ToastrModule } from 'ngx-toastr';
 import { PgpComponent } from './shared/pgp/pgp.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { JwtInterceptor } from './interceptor/jwt.interceptor';
+import { AdminRedirectComponent } from './admin/admin-redirect/admin-redirect.component';
 
 @NgModule({
     declarations: [
@@ -49,6 +51,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
         AdminCvSpyComponent,
         PgpComponent,
         ContactPageComponent,
+        AdminRedirectComponent,
     ],
     imports: [
         BrowserModule,
@@ -60,7 +63,9 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
         TypeaheadModule.forRoot(),
         ToastrModule.forRoot({ positionClass: 'toast-bottom-center' }),
     ],
-    providers: [],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

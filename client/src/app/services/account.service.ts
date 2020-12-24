@@ -18,7 +18,6 @@ export class AccountService {
     login(username: string, password: string) {
         return (
             this.http
-                ///api/account/login
                 .post(this.baseUrl + 'account/login', {
                     username,
                     password,

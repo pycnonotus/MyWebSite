@@ -6,6 +6,7 @@ using API.DTOs;
 using API.Entities;
 using API.Interfaces;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -26,7 +27,9 @@ namespace API.Controllers
             return Ok(await this.unitOfWork.ProjectRepository.GetProjects());
         }
 
+        [Authorize]
         [HttpPost]
+
         public async Task<ActionResult> AddProject(AddProjectDto addProjectDto)
         {
             var project = this.mapper.Map<Projects>(addProjectDto);

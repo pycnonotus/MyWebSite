@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminCvSpyComponent } from './admin/admin-cv-spy/admin-cv-spy.component';
 import { AdminProjectsMangerComponent } from './admin/admin-projects-manger/admin-projects-manger.component';
+import { AdminRedirectComponent } from './admin/admin-redirect/admin-redirect.component';
 import { AdminComponent } from './admin/admin.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { ContactComponent } from './contact/contact.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
         children: [
             { path: 'projects', component: AdminProjectsMangerComponent },
             { path: 'cv', component: AdminCvSpyComponent },
+            { path: 'redirect', component: AdminRedirectComponent },
         ],
     },
     { path: 'projects', component: ProjectsComponent },
