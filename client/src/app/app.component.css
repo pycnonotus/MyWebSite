@@ -1,9 +1,11 @@
-:host{
-  text-align: center;
+:host {
+    text-align: center;
 }
-header{
+
+header {
     display: block;
-    position:sticky;
+    position: fixed;
     top: 0;
-    z-index:31238192038190823091;
+    z-index: 31238192038190823091;
+    width: 100%;
 }

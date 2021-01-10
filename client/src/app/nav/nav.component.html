@@ -1,29 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarsExample07"
-            aria-controls="navbarsExample07"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class=" navbar-collapse" >
+        <div class=" navbar-collapse hide-sm" [ngClass]="{'hide-sm':true}">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        routerLinkActive="active"
-                        routerLink="/"
-                        (mouseover)="onHover($event)"
-                        (mouseout)="onHoverOut()"
-                        (click)="moveBarTo($event)"
-                        [routerLinkActiveOptions]="{ exact: true }"
-                    >
+                    <a class="nav-link" routerLinkActive="active" routerLink="/" (mouseover)="onHover($event)" (mouseout)="onHoverOut()" (click)="moveBarTo($event)" [routerLinkActiveOptions]="{ exact: true }">
                         Home</a
                     >
                 </li>
@@ -41,14 +25,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a
-                        (click)="moveBarTo($event)"
-                        (mouseover)="onHover($event)"
-                        (mouseout)="onHoverOut()"
-                        routerLinkActive="active"
-                        routerLink="/projects"
-                        class="nav-link"
-                    >
+                    <a (click)="moveBarTo($event)" (mouseover)="onHover($event)" (mouseout)="onHoverOut()" routerLinkActive="active" routerLink="/projects" class="nav-link">
                         Projects
                     </a>
                 </li>
@@ -56,24 +33,12 @@
             <ul class="navbar-nav text-right">
 
                 <li class="nav-item">
-                    <a
-                        (mouseover)="onHover($event)"
-                        (mouseout)="onHoverOut()"
-                        class="nav-link"
-                        href="http://antct.icu/brmb"
-                        target="_blank"
-                    >
+                    <a (mouseover)="onHover($event)" (mouseout)="onHoverOut()" class="nav-link" href="http://antct.icu/brmb" target="_blank">
                         <i class="fab fa-linkedin" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        (mouseover)="onHover($event)"
-                        (mouseout)="onHoverOut()"
-                        href="http://antct.icu/asit"
-                        target="_blank"
-                    >
+                    <a class="nav-link" (mouseover)="onHover($event)" (mouseout)="onHoverOut()" href="http://antct.icu/asit" target="_blank">
                         <i class="fab fa-github" aria-hidden="true"></i>
                     </a>
                 </li>
@@ -82,9 +47,5 @@
     </div>
 </nav>
 <div class="nav-animate">
-    <div
-        class="bar"
-        [style.left]="barLeftX + 'px'"
-        [style.width]="barWidth + 'px'"
-    ></div>
+    <div class="bar" [style.left]="barLeftX + 'px'" [style.width]="barWidth + 'px'"></div>
 </div>

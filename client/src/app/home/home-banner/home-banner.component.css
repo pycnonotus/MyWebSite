@@ -1,91 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
-:host {
-    box-sizing: border-box;
-}
-.animat {
-    height: 45px;
-    overflow: hidden;
-}
-.pretext {
-        color: white;
-        font-size: 0.8em;
-}
-.animat > div > div {
-    display: inline-block;
-    padding: 0 8px;
-    height: 50px;
+.text-write,
+h2,
+h1 {
     color: white;
-    letter-spacing: 8px;
-    text-align: center;
-    font-family: 'Shadows Into Light', cursive;
 }
-.animat div:first-child {
-    animation: show 10s linear infinite;
-}
-.animat div {
-    height: 50px;
-}
-.animat div div {
-    background-color: #42c58a;
-    margin: 0;
-}
-.animat div:nth-child(2) div {
-    background-color: var(--red);
-}
-.animat div:nth-child(3) div {
-    background-color: var(--yellow);
-}
-.animat div:nth-child(4) div {
-    background-color: var(--indigo);
-}
-.animat div:first-child div {
-    background-color: #4ec7f3;
-}
-.animat div:last-child div {
-    background-color:  #4ec7f3;
-}
-@keyframes show {
-    0% {
-        margin-top: 0px;
-    }
-    18.9% {
-        margin-top: 0px;
-    }
 
-    20% {
-        margin-top: -50px;
-    }
-    38.9% {
-        margin-top: -50px;
-    }
-    40% {
-        margin-top: -100px;
-    }
-    58.9% {
-        margin-top: -100px;
-    }
-    60% {
-        margin-top: -150px;
-    }
-    78.9% {
-        margin-top: -150px;
-    }
-    80% {
-        margin-top: -200px;
-    }
-
-    98.9% {
-        margin-top: -200px;
-    }
-    100% {
-        margin-top: -250px;
-    }
+h1 {
+    font-size: 56px;
+    margin-bottom: 1em;
 }
-#wrap {
-    color: rgb(0, 0, 0);
-    text-transform: uppercase;
-    font-size: 36px;
-    font-weight: bold;
+
+.scroll-arrow-wrap {
+    position: absolute;
+    z-index: 1;
+    color: white;
     width: 100%;
-    display: block;
+    left: 0;
+    margin: 1em 0;
+    bottom: 10%;
+}
+
+.scroll-arrow-wrap>i {
+    font-size: 3em;
+    text-shadow: 0 0 3px #FFF;
+    animation-name: arrow;
+    animation: arrow 1s infinite;
+    animation-direction: alternate;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+@keyframes arrow {
+    from {
+        top: 10px;
+        text-shadow: 0 0 3px #FFF;
+    }
+    to {
+        top: -10px;
+        text-shadow: 0 0 0px #FFF;
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-home-banner',
@@ -6,7 +6,136 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./home-banner.component.css'],
 })
 export class HomeBannerComponent implements OnInit {
-    constructor() {}
+    @ViewChild('textWrite') textWrite;
+    constructor() {
+        this.initText();
+    }
+    private preText = "I'm a ";
+    private devText = 'Web';
+    private preDevText = 'Web';
+    private posText = ' Developer';
+    private devIndex = 0;
+    private timeOut = 50;
+    private otherDevText = [
+        'Web',
+        'Fullstack',
+        'Backend',
+        '.Net',
+        'Angular',
+        'Node',
+    ];
 
+    text = '';
     ngOnInit(): void {}
+    private async initText() {
+        setTimeout(async () => {
+            const sub = this.preText.substring(0, this.text.length + 1);
+            this.text = sub;
+            console.log(this.text.length, this.preText.length);
+
+            if (this.text.length < this.preText.length) {
+                this.initText();
+            } else {
+                this.printDev();
+            }
+        }, this.timeOut);
+    }
+    private printDev() {
+        setTimeout(async () => {
+            const sub =
+                this.preText +
+                this.devText.substring(
+                    0,
+                    this.text.length - this.preText.length + 1
+                );
+            this.text = sub;
+            const maxSize = this.preText.length + this.devText.length;
+            if (this.text.length < maxSize) {
+                this.printDev();
+            } else {
+                this.printPost();
+            }
+        }, this.timeOut);
+    }
+    private printPost() {
+        setTimeout(() => {
+            const sub =
+                this.preText +
+                this.devText +
+                this.posText.substring(
+                    0,
+                    this.text.length -
+                        (this.preText.length + this.devText.length) +
+                        1
+                );
+            this.text = sub;
+            const maxSize =
+                this.preText.length + this.devText.length + this.posText.length;
+            if (this.text.length < maxSize) {
+                this.printPost();
+            } else {
+                this.changeDev();
+            }
+        }, this.timeOut);
+    }
+
+    private async deleteDev() {
+        setTimeout(() => {
+            console.log('delete');
+
+            const si =
+                this.text.length -
+                (this.preText.length + this.posText.length + 1);
+            console.log(si);
+
+            const sub =
+                this.preText + this.preDevText.substring(0, si) + this.posText;
+            this.text = sub;
+            const minSize = this.preText.length + this.posText.length;
+            console.log(this.text.length, minSize);
+            console.log(this.text);
+
+            if (this.text.length > minSize) {
+                this.deleteDev();
+            } else {
+                this.addDev();
+            }
+        }, this.timeOut);
+    }
+    private async addDev() {
+        setTimeout(() => {
+            const si =
+                this.text.length -
+                (this.preText.length + this.posText.length) +
+                1;
+            console.log('a' + si);
+
+            const sub =
+                this.preText + this.devText.substring(0, si) + this.posText;
+            this.text = sub;
+            const maxSize =
+                this.preText.length + this.devText.length + this.posText.length;
+            if (this.text.length < maxSize) {
+                this.addDev();
+            } else {
+                this.changeDev();
+            }
+        }, this.timeOut);
+    }
+    private changeDev() {
+        this.preDevText = this.devText;
+        this.devIndex++;
+        if (this.devIndex >= this.otherDevText.length) {
+            this.devIndex = 0;
+        }
+
+        console.log('index', this.devIndex, this.otherDevText.length);
+
+        this.devText = this.otherDevText[this.devIndex];
+
+        console.log('change', this.devText, this.preDevText);
+        setTimeout(() => {
+            this.deleteDev();
+        }, this.timeOut * 10);
+    }
 }

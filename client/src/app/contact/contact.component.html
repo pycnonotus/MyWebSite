@@ -1,73 +1,50 @@
 <form #contactForm="ngForm" (submit)="contactForm.valid && onFormSubmit()">
     <div class="container">
         <div class="row mb-4">
-            <div class="col">
-            </div>
+            <div class="col"></div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6 form-group">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Legacy form field</mat-label>
+                    <input matInput placeholder="Placeholder" />
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                </mat-form-field>
                 <label for="exampleInputEmail1">Name</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    [(ngModel)]="model.name"
-                    name="name"
-                    #name="ngModel"
-                    placeholder="Bob McBob"
-                />
+                <input type="text" class="form-control" [(ngModel)]="model.name" name="name" #name="ngModel" placeholder="Bob McBob" />
             </div>
 
             <div class="col-sm-12 col-md-6 form-group">
                 <label for="exampleInputEmail1">Phone number</label>
-                <input
-                    type="phone"
-                    class="form-control"
-                    placeholder="0500000000"
-                    [(ngModel)]="model.phoneNumber"
-                    name="phoneNumber"
-                />
+                <input type="phone" class="form-control" placeholder="0500000000" [(ngModel)]="model.phoneNumber" name="phoneNumber" />
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-12 col-md-12 form-group">
                 <label for="exampleInputEmail1">Email</label>
-                <input
-                    type="phone"
-                    class="form-control"
-                    placeholder="example@example.com"
-                    [(ngModel)]="model.email"
-                    name="email"
-                    email
-                    #email="ngModel"
-                />
+                <input type="phone" class="form-control" placeholder="example@example.com" [(ngModel)]="model.email" name="email" email #email="ngModel" />
             </div>
-            <div
-                [hidden]="email.valid || !email.dirty || email.pristine || !email.touched"
-                class="col-sm-12 col-md-12 form-group"
-            >
+            <div [hidden]="
+                    email.valid ||
+                    !email.dirty ||
+                    email.pristine ||
+                    !email.touched
+                " class="col-sm-12 col-md-12 form-group">
                 <div class="alert alert-danger">invalid mail</div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-12 form-group">
                 <label for="exampleInputEmail1">Message</label>
-                <textarea
-                    class="form-control"
-                    [(ngModel)]="model.message"
-                    name="message"
-                    placeholder="bla bla bla bla"
-                >
+                <textarea class="form-control" [(ngModel)]="model.message" name="message" placeholder="Your message here...">
                 </textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-12 form-group text-right">
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                    [disabled]="!contactForm.form.valid || loading"
-                >
+                <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid || loading">
                     Send
                 </button>
             </div>

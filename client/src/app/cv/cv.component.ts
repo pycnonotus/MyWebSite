@@ -11,5 +11,5 @@ export class CvComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+    showPhone: boolean = false;
 }

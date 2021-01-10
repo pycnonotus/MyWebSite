@@ -29,6 +29,10 @@ import { PgpComponent } from './shared/pgp/pgp.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { JwtInterceptor } from './interceptor/jwt.interceptor';
 import { AdminRedirectComponent } from './admin/admin-redirect/admin-redirect.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     declarations: [
@@ -62,6 +66,10 @@ import { AdminRedirectComponent } from './admin/admin-redirect/admin-redirect.co
         ModalModule.forRoot(),
         TypeaheadModule.forRoot(),
         ToastrModule.forRoot({ positionClass: 'toast-bottom-center' }),
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
