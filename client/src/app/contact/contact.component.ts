@@ -12,6 +12,7 @@ import { Contact } from '../models/contact';
 })
 export class ContactComponent implements OnInit {
     baseUrl = environment.apiUrl;
+    showPhone = false;
     model: Contact = {
         email: '',
         message: '',

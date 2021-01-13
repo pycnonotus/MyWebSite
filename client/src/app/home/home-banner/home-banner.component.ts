@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-home-banner',
@@ -22,17 +22,16 @@ export class HomeBannerComponent implements OnInit {
         'Backend',
         '.Net',
         'Angular',
-        'Node',
+        'Frontend',
     ];
 
     text = '';
+    @Output() scrollDown = new EventEmitter();
     ngOnInit(): void {}
     private async initText() {
         setTimeout(async () => {
             const sub = this.preText.substring(0, this.text.length + 1);
             this.text = sub;
-            console.log(this.text.length, this.preText.length);
-
             if (this.text.length < this.preText.length) {
                 this.initText();
             } else {
@@ -81,19 +80,15 @@ export class HomeBannerComponent implements OnInit {
 
     private async deleteDev() {
         setTimeout(() => {
-            console.log('delete');
 
             const si =
                 this.text.length -
                 (this.preText.length + this.posText.length + 1);
-            console.log(si);
 
             const sub =
                 this.preText + this.preDevText.substring(0, si) + this.posText;
             this.text = sub;
             const minSize = this.preText.length + this.posText.length;
-            console.log(this.text.length, minSize);
-            console.log(this.text);
 
             if (this.text.length > minSize) {
                 this.deleteDev();
@@ -108,8 +103,6 @@ export class HomeBannerComponent implements OnInit {
                 this.text.length -
                 (this.preText.length + this.posText.length) +
                 1;
-            console.log('a' + si);
-
             const sub =
                 this.preText + this.devText.substring(0, si) + this.posText;
             this.text = sub;
@@ -129,11 +122,8 @@ export class HomeBannerComponent implements OnInit {
             this.devIndex = 0;
         }
 
-        console.log('index', this.devIndex, this.otherDevText.length);
-
         this.devText = this.otherDevText[this.devIndex];
 
-        console.log('change', this.devText, this.preDevText);
         setTimeout(() => {
             this.deleteDev();
         }, this.timeOut * 10);

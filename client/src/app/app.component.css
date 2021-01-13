@@ -9,3 +9,8 @@ header {
     z-index: 31238192038190823091;
     width: 100%;
 }
+
+app-footer {
+    scroll-snap-align: start;
+    display: block;
+}

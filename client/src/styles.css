@@ -7,6 +7,13 @@ html body {
     font-size: 16px;
 }
 
+:root {
+    --main-color: rgb(63, 81, 181);
+    --main-color-R: 63;
+    --main-color-G: 81;
+    --main-color-B: 181;
+}
+
 ul.no-dot {
     list-style: none;
 }
@@ -27,12 +34,45 @@ app-root {
     }
 }
 
+html {}
+
 html,
 body {
     height: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.row {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.scroll-snap {
+    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
+    height: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.flex {
+    display: flex;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.grid {
+    display: grid;
+}
+
+.snap {
+    scroll-snap-align: start;
 }

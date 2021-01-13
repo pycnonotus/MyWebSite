@@ -1,85 +1,38 @@
-<div class="banner-vid-backg">
-    <div class="banner">
-        <div class="container">
-            <div class="banner-wrap">
-                <app-home-banner></app-home-banner>
-            </div>
-            <div class="btn-sub">
-
-                <a href="#">
-                    Projects
-                </a>
-                <a href="#">
-                    Resume
-                </a>
-                <!-- <button mat-flat-button>Resume</button> -->
-            </div>
-            <div class="btn-socail">
-                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                    <i class="fab fa-github"></i>
-                </button>
-                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-                    <i class="fab fa-linkedin"></i>
-                </button>
-            </div>
-        </div>
+<div class="">
+    <div class="sideNav">
+        <ul>
+            <li><i class="far fa-circle"></i></li>
+            <li><i class="far fa-circle"></i></li>
+            <li><i class="far fa-circle"></i></li>
+        </ul>
     </div>
-    <video autoplay loop muted>
-        <source src="./assets/vids/Code.mp4" type="video/mp4" />
-    </video>
-</div>
-
-<div class="container">
-    <h1>Languages, Tools, and ect...</h1>
-    <hr />
-    <div class="skills">
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/c--4.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/java-4.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/javascript.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/typescript.svg" />
+    <div class="banner-vid-backg snap">
+        <div class="banner">
+            <div class="container">
+                <div class="banner-wrap">
+                    <app-home-banner (scrollDown)="scrollTo(skill)"></app-home-banner>
+                </div>
+                <div class="btn-sub">
+                    <a (click)="scrollTo(projects)"> Projects </a>
+                    <a (click)="scrollTo(cv)"> Resume </a>
+                    <!-- <button mat-flat-button>Resume</button> -->
+                </div>
+                <canvas #canvasRain></canvas>
+            </div>
         </div>
 
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/node-js-logo.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/express-109.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/dot-net-core-7.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/angular-icon.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/postgresql.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/mongodb.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/visual-studio-code-1.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/intellij-idea-1.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/github-octocat.svg" />
-        </div>
-        <div class="wrap">
-            <img src="/assets/svgs/custom-icons/tux-linux.svg" />
-        </div>
-        <hr />
     </div>
-    <small>and more</small>
-    <div class="container">
-        <app-contact></app-contact>
+    <div class="snap" #skill>
+        <app-home-skill></app-home-skill>
+    </div>
+    <div class="snap" #projects>
+        PROJECT
+        <app-projects></app-projects>
+    </div>
+    <div class="" #cv>
+        <app-cv></app-cv>
+    </div>
+    <div class="snap" #contact>
+        <app-home-contact></app-home-contact>
     </div>
 </div>

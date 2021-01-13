@@ -1,0 +1,74 @@
+:host {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills>i {
+    width: 100px;
+    font-size: 5em;
+}
+
+.skills>.wrap {
+    width: 80px;
+    margin: 1em;
+    text-align: center;
+}
+
+.skills>.wrap>img {
+    width: 100%;
+    height: auto;
+    transition: all 0.5s ease;
+}
+
+.skills:hover>.wrap>img {
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+.skills>.wrap:hover>img {
+    transform: scale(1.5);
+    filter: grayscale(0%);
+}
+
+.line {
+    height: 500px;
+    clip-path: polygon(0 11%, 100% 0, 100% 50%, 100% 81%, 0% 100%);
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+}
+
+.line::before {
+    position: absolute;
+    background: url('/assets/typing.jpg');
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 100%;
+    content: ' ';
+    z-index: -2;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.line::after {
+    position: absolute;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9023984593837535) 54%, rgba(109, 0, 158, 0.9023984593837535) 100%);
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 100%;
+    content: ' ';
+    z-index: -1;
+}

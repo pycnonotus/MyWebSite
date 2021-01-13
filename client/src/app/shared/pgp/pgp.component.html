@@ -1,7 +1,10 @@
+<div class="row">
+    <h2>pgp key</h2>
+</div>
 <div class="container text-left mt-4 mb-4">
-    <div class="row">
+    <div class="row flex">
         <div class="col col-sm-12 col-md-12  mb-4">
-            to download pgp key click {{" "}}
+            to the download pgp key click {{" "}}
             <a href="https://getant.xyz/antonpubkey.asc" download>here</a>
         </div>
     </div>
@@ -9,10 +12,7 @@
 
         <div class="col col-sm-12 col-md-3">
             <h4>
-                <button
-                    class="btn btn-primary"
-                    (click)="showPgpKey = !showPgpKey"
-                >
+                <button class="btn btn-primary" (click)="showPgpKey = !showPgpKey">
                     {{ !showPgpKey ? "Show" : "Hide" }} PGP key
                 </button>
             </h4>
@@ -21,7 +21,17 @@
             <p>-----BEGIN PGP PUBLIC KEY BLOCK-----</p>
             <div class="pgp">
                 <p>
-                    xsDNBF/fT/IBDACqXMtGxj/aMnUDIFPZCCXn2GxKAuOtjzzTMDdH+uuD3tulIohuvc24jFopmI5x<br />zHNIiZGOt6DhF/+Yq1u3yUKY3qmP7BlH4x4twXeosGyjzBSI7nCsLALn6zhuF+aLOBefIKB6QvXQ<br />yxc0uRsyNjVwWGJunvB341ABYZMzoxjCEBtgoQT0H9KxGYC0YNLBf5WYcNnpSN7tJhaR463vy4ER<br />0gBuKv6JKxzrkjiJkyD8E3X0f5jFAXbj+WlQravRWBzilTXI5ONr5mfdkMbYtQtJXQAkQgyqIiwX<br />P9zshppDzG3fRVtnwe/3a7qkZeThdoCgKx+PlCwDYJlyyxtnFDrW4fYk7hrfqqD+8z+eOLMdC3cX<br />I50f1+9m6DGtEvA87H7cFttazlwZmJpbdtXSFfStBH0Jglt6suTpSkTAkTerMoegPoHKoTQBWEso<br />uF+tZyIW7zc+11V9rVTlEWSAByPqw320gykdjEPMqjwL1Z/SIXW0qH3AZ3JCjZYz4kAKL5sAEQEA<br />Ac0nQW50b24gR29sb3ZhY2hldiA8YW50b25AYW50b253ZWIuY28uaWw+wsEPBBMBCAA5FiEEZi+t<br />L8xqy9UGuxTvYAEyrm2ZhU0FAl/fT/cFCQWjmoACGwMFCwkIBwIGFQgJCgsCBRYCAwEAAAoJEGAB<br />Mq5tmYVN9e4MAKaPQ6RtRZnmGANnVuoAaw5v3DpyD40Ef5QOUlVhjwDOiXIY12DA75jLWIbvedct<br />YCUJBaqupGZexQa/deQw6maS0Roc+ervwS5UjPFRhBpyeWDPWAMnP5KegwnN8SoRA5BYLzf3hmhX<br />sRX/Q8gY4GLtSEXdDDg3awdfIb7NnvUzaTFTaWol4YOC/TcK/RN6CTiGe6tQ3nwzKjZuihNjSxUW<br />qKK71ngpoUIfWDpjnuu4nDCwC6hBgU/yX08WVqMTlMYlfYtqlrFLaxS+v60hKSqTus+BerzOYggD<br />M/WLk7tHwVA+Cf4SMaH1RllxUJDpuUEry8D330jB690pWLHPU02UL65ssM1fSKFSWhTziVmXo+fX<br />EC3LB/IccxVwWkVlCkNiHSYpVo4hol33IWTvvFfJAzzJuZ882qrWw9h7l1RSIDj09msBvV/np+n2<br />2H85y7VyVlF/3w4jX0AKQoe5+4gOQOwNRSImHii/WdONqSJefwiOwFnImtr+9+fCxx0+0s7AzQRf<br />30/4AQwAt8+XE/IkmZlvOMQpOhOnYCF0RoVO4qVEkmg9jLD27ZT4YmzSfJ0qZdNZCgGxjaFiiO3H<br />RMa7gAWlGbtgleUslNnuXirOBws0LP2fG8qF4pcGXQ/Vrv3SfR5cacL1tudiOiG73sO1OAy3Qkz5<br />jWQDg0dc/D26hMRkfiOZSo8+XWgUHdHhhp7FPStFO5i+MbNlQO8FxujpSL00KZdxItLMrBU9j3Mb<br />sv6vKiJD9p7eDQPdkmhzMy3+8tWGzqe+SmUIWcwLdYwo9o0glZki+QrVLwc/CPzZ0FzAJ74Zm5eo<br />nKFTtWdVP8Fs6QNVYxmEctlCDwIqwBqg5FesbmIasSz6iZ+RUhL0Ji5RkrNdWLh6nk32Bm87uBKp<br />/9PHA5qPl1j+hBkMbZMuU813SyZfabaqFynef1P9R7IQ9MXbrn5tGnBPXc6xo7hPtmsdeRwQNRsd<br />d69GhqWy+5JoFDOHnl33EkAnoobP+Zm4dxHPSCUz1qxXIX+R91WG4pKTlzQWG1TbABEBAAHCwPwE<br />GAEIACYWIQRmL60vzGrL1Qa7FO9gATKubZmFTQUCX99P/AUJBaOagAIbDAAKCRBgATKubZmFTYcW<br />C/9CQtGDLSErZQJESrCDk+7J54Z4ycg+r9St9WV4SC1ah+P9DluIrHhGdQWfto4EPDvgwcI4YrSz<br />ZYhoM5ZUZ+0DbCpAgg6zCbFpV+FiXadENUp0Ow1rEQQ/w8uLJbNncvTiliegfQmls1Ydy2aUAtJf<br />abef5lXNhNrxDnne9G+VyEDpBwo9YTgCe7LGQsWOx5w02s1Tk0dESyusUaSgeJE4cymwL/R5NFhK<br />e0fLRojFC8haPGttpWpVOnF1xJMKMyk8i17BrpL/cJ45GUyhiTBH6aRcnmHf5RYXLHUF0VuVnrjC<br />++o3ErREApY4I2bPd+kXPpgMvN/qpa2uL0bx83cJGW5rPSqPgTiz1o3KkA/Pj+Jtw3tgq2iznlhp<br />Lhl+jLD8GwfThV4bUT8rAVsK6HcA/6J1M3Oijq+6OtpOK1cljIjR2IXU2W4IlGRT68FMGQ0qJTY+<br />TIVs6pY64FdYgmQEM+zC6aTJyYd+CzlQVsGhbCzf1NXRYvVo4RxdNXo2kKU=<br />=3Yvy
+                    xsDNBF/fT/IBDACqXMtGxj/aMnUDIFPZCCXn2GxKAuOtjzzTMDdH+uuD3tulIohuvc24jFopmI5x<br />zHNIiZGOt6DhF/+Yq1u3yUKY3qmP7BlH4x4twXeosGyjzBSI7nCsLALn6zhuF+aLOBefIKB6QvXQ<br />yxc0uRsyNjVwWGJunvB341ABYZMzoxjCEBtgoQT0H9KxGYC0YNLBf5WYcNnpSN7tJhaR463vy4ER<br
+                    />0gBuKv6JKxzrkjiJkyD8E3X0f5jFAXbj+WlQravRWBzilTXI5ONr5mfdkMbYtQtJXQAkQgyqIiwX<br />P9zshppDzG3fRVtnwe/3a7qkZeThdoCgKx+PlCwDYJlyyxtnFDrW4fYk7hrfqqD+8z+eOLMdC3cX<br />I50f1+9m6DGtEvA87H7cFttazlwZmJpbdtXSFfStBH0Jglt6suTpSkTAkTerMoegPoHKoTQBWEso<br
+                    />uF+tZyIW7zc+11V9rVTlEWSAByPqw320gykdjEPMqjwL1Z/SIXW0qH3AZ3JCjZYz4kAKL5sAEQEA<br />Ac0nQW50b24gR29sb3ZhY2hldiA8YW50b25AYW50b253ZWIuY28uaWw+wsEPBBMBCAA5FiEEZi+t<br />L8xqy9UGuxTvYAEyrm2ZhU0FAl/fT/cFCQWjmoACGwMFCwkIBwIGFQgJCgsCBRYCAwEAAAoJEGAB<br
+                    />Mq5tmYVN9e4MAKaPQ6RtRZnmGANnVuoAaw5v3DpyD40Ef5QOUlVhjwDOiXIY12DA75jLWIbvedct<br />YCUJBaqupGZexQa/deQw6maS0Roc+ervwS5UjPFRhBpyeWDPWAMnP5KegwnN8SoRA5BYLzf3hmhX<br />sRX/Q8gY4GLtSEXdDDg3awdfIb7NnvUzaTFTaWol4YOC/TcK/RN6CTiGe6tQ3nwzKjZuihNjSxUW<br
+                    />qKK71ngpoUIfWDpjnuu4nDCwC6hBgU/yX08WVqMTlMYlfYtqlrFLaxS+v60hKSqTus+BerzOYggD<br />M/WLk7tHwVA+Cf4SMaH1RllxUJDpuUEry8D330jB690pWLHPU02UL65ssM1fSKFSWhTziVmXo+fX<br />EC3LB/IccxVwWkVlCkNiHSYpVo4hol33IWTvvFfJAzzJuZ882qrWw9h7l1RSIDj09msBvV/np+n2<br
+                    />2H85y7VyVlF/3w4jX0AKQoe5+4gOQOwNRSImHii/WdONqSJefwiOwFnImtr+9+fCxx0+0s7AzQRf<br />30/4AQwAt8+XE/IkmZlvOMQpOhOnYCF0RoVO4qVEkmg9jLD27ZT4YmzSfJ0qZdNZCgGxjaFiiO3H<br />RMa7gAWlGbtgleUslNnuXirOBws0LP2fG8qF4pcGXQ/Vrv3SfR5cacL1tudiOiG73sO1OAy3Qkz5<br
+                    />jWQDg0dc/D26hMRkfiOZSo8+XWgUHdHhhp7FPStFO5i+MbNlQO8FxujpSL00KZdxItLMrBU9j3Mb<br />sv6vKiJD9p7eDQPdkmhzMy3+8tWGzqe+SmUIWcwLdYwo9o0glZki+QrVLwc/CPzZ0FzAJ74Zm5eo<br />nKFTtWdVP8Fs6QNVYxmEctlCDwIqwBqg5FesbmIasSz6iZ+RUhL0Ji5RkrNdWLh6nk32Bm87uBKp<br
+                    />/9PHA5qPl1j+hBkMbZMuU813SyZfabaqFynef1P9R7IQ9MXbrn5tGnBPXc6xo7hPtmsdeRwQNRsd<br />d69GhqWy+5JoFDOHnl33EkAnoobP+Zm4dxHPSCUz1qxXIX+R91WG4pKTlzQWG1TbABEBAAHCwPwE<br />GAEIACYWIQRmL60vzGrL1Qa7FO9gATKubZmFTQUCX99P/AUJBaOagAIbDAAKCRBgATKubZmFTYcW<br
+                    />C/9CQtGDLSErZQJESrCDk+7J54Z4ycg+r9St9WV4SC1ah+P9DluIrHhGdQWfto4EPDvgwcI4YrSz<br />ZYhoM5ZUZ+0DbCpAgg6zCbFpV+FiXadENUp0Ow1rEQQ/w8uLJbNncvTiliegfQmls1Ydy2aUAtJf<br />abef5lXNhNrxDnne9G+VyEDpBwo9YTgCe7LGQsWOx5w02s1Tk0dESyusUaSgeJE4cymwL/R5NFhK<br
+                    />e0fLRojFC8haPGttpWpVOnF1xJMKMyk8i17BrpL/cJ45GUyhiTBH6aRcnmHf5RYXLHUF0VuVnrjC<br />++o3ErREApY4I2bPd+kXPpgMvN/qpa2uL0bx83cJGW5rPSqPgTiz1o3KkA/Pj+Jtw3tgq2iznlhp<br />Lhl+jLD8GwfThV4bUT8rAVsK6HcA/6J1M3Oijq+6OtpOK1cljIjR2IXU2W4IlGRT68FMGQ0qJTY+<br
+                    />TIVs6pY64FdYgmQEM+zC6aTJyYd+CzlQVsGhbCzf1NXRYvVo4RxdNXo2kKU=<br />=3Yvy
                 </p>
             </div>
             <p>-----END PGP PUBLIC KEY BLOCK-----</p>

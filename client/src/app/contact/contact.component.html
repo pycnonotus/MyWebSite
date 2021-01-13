@@ -1,53 +1,81 @@
-<form #contactForm="ngForm" (submit)="contactForm.valid && onFormSubmit()">
-    <div class="container">
-        <div class="row mb-4">
-            <div class="col"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-6 form-group">
-                <mat-form-field appearance="legacy">
-                    <mat-label>Legacy form field</mat-label>
-                    <input matInput placeholder="Placeholder" />
-                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                    <mat-hint>Hint</mat-hint>
-                </mat-form-field>
-                <label for="exampleInputEmail1">Name</label>
-                <input type="text" class="form-control" [(ngModel)]="model.name" name="name" #name="ngModel" placeholder="Bob McBob" />
-            </div>
-
-            <div class="col-sm-12 col-md-6 form-group">
-                <label for="exampleInputEmail1">Phone number</label>
-                <input type="phone" class="form-control" placeholder="0500000000" [(ngModel)]="model.phoneNumber" name="phoneNumber" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 col-md-12 form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="phone" class="form-control" placeholder="example@example.com" [(ngModel)]="model.email" name="email" email #email="ngModel" />
-            </div>
-            <div [hidden]="
-                    email.valid ||
-                    !email.dirty ||
-                    email.pristine ||
-                    !email.touched
-                " class="col-sm-12 col-md-12 form-group">
-                <div class="alert alert-danger">invalid mail</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12 form-group">
-                <label for="exampleInputEmail1">Message</label>
-                <textarea class="form-control" [(ngModel)]="model.message" name="message" placeholder="Your message here...">
-                </textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12 form-group text-right">
-                <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid || loading">
-                    Send
-                </button>
-            </div>
-        </div>
+<div class="main">
+    <div class="row info">
+        <h1>Contact me</h1>
+        <ul>
+            <li>
+                <span>Phone:</span>
+                <button *ngIf="!showPhone" mat-button color="primary" (click)="showPhone=true">Reveal</button>
+                <a href="#" *ngIf="showPhone">
+                0524212115
+            </a>
+            </li>
+            <li>
+                <span>Email:</span>
+                <a href="mailto:anton@antonweb.co.il">anton@antonweb.co.il
+            </a>
+            </li>
+            <li>
+                <span>Linkedin:</span>
+                <a href="https://antct.icu/cd3y">https://www.linkedin.com/in/anton-golovachev-620a3b173/
+            </a>
+            </li>
+        </ul>
     </div>
-</form>
+    <div class="contact-form-wrap ">
+        <mat-card [class.mat-elevation-z8]="true">
+            <h2>Or just use this form</h2>
+
+            <form #contactForm="ngForm" (submit)="contactForm.valid && onFormSubmit()">
+                <div class="container">
+                    <div class="row">
+                        <div class="">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Name</mat-label>
+                                <input matInput placeholder="John McJackson" [(ngModel)]="model.name" name="name" #name="ngModel" />
+                            </mat-form-field>
+                        </div>
+
+                        <div class="">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Phone Number</mat-label>
+                                <input type="tel" matInput placeholder="0500000000" [(ngModel)]="model.phoneNumber" name="phoneNumber" tel />
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 form-group">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Email</mat-label>
+                                <input type="phone" matInput placeholder="example@example.com" [(ngModel)]="model.email" name="email" email #email="ngModel" />
+                            </mat-form-field>
+                        </div>
+                        <div [hidden]="
+                            email.valid ||
+                            !email.dirty ||
+                            email.pristine ||
+                            !email.touched
+                        " class="col-sm-12 col-md-12 form-group"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 form-group">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Message</mat-label>
+                                <textarea rows="5" matInput [(ngModel)]="model.message" name="message" placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis dolor minima et sapiente saepe adipisci repellat? Illum eius, itaque omnis voluptatum quia dicta ut ullam!"></textarea>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 form-group text-right btn-wrap">
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!contactForm.form.valid || loading">
+                            Send Message
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+
+
+</div>

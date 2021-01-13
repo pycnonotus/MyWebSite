@@ -1,12 +1,19 @@
+:host {
+    font-size: 16px;
+}
+
 .text-write,
 h2,
 h1 {
     color: white;
+    font-weight: 400;
 }
 
 h1 {
-    font-size: 56px;
+    font-size: 4em;
     margin-bottom: 1em;
+    line-height: 1.2;
+    display: block;
 }
 
 .scroll-arrow-wrap {
@@ -16,12 +23,12 @@ h1 {
     width: 100%;
     left: 0;
     margin: 1em 0;
-    bottom: 10%;
+    bottom: 5%;
 }
 
 .scroll-arrow-wrap>i {
-    font-size: 3em;
-    text-shadow: 0 0 3px #FFF;
+    font-size: 2em;
+    text-shadow: 0 0 3px #fff;
     animation-name: arrow;
     animation: arrow 1s infinite;
     animation-direction: alternate;
@@ -33,10 +40,23 @@ h1 {
 @keyframes arrow {
     from {
         top: 10px;
-        text-shadow: 0 0 3px #FFF;
+        text-shadow: 0 0 3px #fff;
     }
     to {
         top: -10px;
-        text-shadow: 0 0 0px #FFF;
+        text-shadow: 0 0 0px #fff;
+    }
+}
+
+@media only screen and (max-width:1023px) {
+    h1 {
+        font-size: 3.5em !important;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    h1 {
+        font-size: 3.5em !important;
+        height: 155px;
     }
 }

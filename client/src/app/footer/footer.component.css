@@ -1,14 +1,16 @@
-.root{
-  background-color: var(--primary);
-  color: white;
-  padding: 1em;
-  text-align: start;
-}
-.foot{
-  text-align: center;
+.root {
+    background-color: var(--primary);
+    color: white;
+    padding: 1em;
+    text-align: start;
+    background-color: var(--main-color);
 }
 
-.container{
+.foot {
+    text-align: center;
+}
+
+.container {
     padding-top: 1em;
     display: flex;
 }

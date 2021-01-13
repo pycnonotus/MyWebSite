@@ -33,6 +33,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { HomeSkillComponent } from './home/home-skill/home-skill.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { HomeContactComponent } from './home/home/home-contact/home-contact.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
     declarations: [
@@ -56,6 +60,8 @@ import { MatIconModule } from '@angular/material/icon';
         PgpComponent,
         ContactPageComponent,
         AdminRedirectComponent,
+        HomeSkillComponent,
+        HomeContactComponent,
     ],
     imports: [
         BrowserModule,
@@ -70,6 +76,8 @@ import { MatIconModule } from '@angular/material/icon';
         MatFormFieldModule,
         MatInputModule,
         MatIconModule,
+        MatDividerModule,
+        MatCardModule,
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

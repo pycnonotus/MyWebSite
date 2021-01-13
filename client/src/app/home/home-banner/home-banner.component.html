@@ -1,9 +1,9 @@
-<div id="wrap">
+<div id="wrap" class="flex">
     <h1 class="text-write mat-h1" #textWrite>
         {{ text }}
     </h1>
 
     <div class="scroll-arrow-wrap">
-        <i class="fad fa-angle-double-down"></i>
+        <i class="fad fa-angle-double-down" (click)="scrollDown.emit()"></i>
     </div>
 </div>
